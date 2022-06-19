@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1095885407830",
+    "project_id": "fir-messaging-eeab5",
+    "storage_bucket": "fir-messaging-eeab5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095885407830:android:20075e4a5cfa3d6428ddf7",
+        "android_client_info": {
+          "package_name": "com.avinash.vns.firebasemessaging"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095885407830-jm8hkbhkt5ophnpui9h2p59cgqa24h2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1RjY1vExBqQMfp0Be_8BE93nZPYrob1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095885407830-jm8hkbhkt5ophnpui9h2p59cgqa24h2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

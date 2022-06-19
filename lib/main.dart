@@ -1,12 +1,18 @@
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebasemessaging/homepage.dart';
 import 'package:flutter/material.dart';
 
-void main(){
+void main()async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: '/',
     routes: {
       '/':(context)=> MyApp(),
+      '/second':(context)=>HomePage(),
     },
   ));
 }
@@ -23,8 +29,8 @@ class MyApp extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [Colors.green,Colors.lightGreenAccent],
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
             ),
           ),
         ),
@@ -34,13 +40,49 @@ class MyApp extends StatelessWidget {
           child: ListView(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-                margin: EdgeInsets.all(10.0),
-                width: 100,
-                height: 200,
-                color: Colors.blue,
-                child: Text("Raj"),
+                height: 600,
+                margin: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Card(
+                      //color: Colors.greenAccent,
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        // child: Text("Welcome in My App\nToday , I am working on firebase notification\n"
+                        //     "and In-App messaging  "),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Welcome in My App\n",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color: Colors.green),),
+                            Text("Today ,\n",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),),
+                            Text("I am working on firebase notification\n",style: TextStyle(fontSize: 16),),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Image(
+                      image: AssetImage("assets/images/Firebase.png"),
+                    ),
+
+                    Center(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.green.withOpacity(.80),
+                        ),
+                        child: Text("Continue"),
+                        onPressed: (){
+
+                          Navigator.pushNamed(context, '/second');
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
+
             ],
           ),
         ),
