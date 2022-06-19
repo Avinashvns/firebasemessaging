@@ -4,8 +4,13 @@ import 'package:firebasemessaging/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main()async{
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+ {
+   try{
+     WidgetsFlutterBinding.ensureInitialized();
+     await Firebase.initializeApp();
+   }
+   catch(e){}
+ }
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
